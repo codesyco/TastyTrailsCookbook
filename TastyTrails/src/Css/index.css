@@ -1,3 +1,95 @@
 @charset "UTF-8";
 @import "colors.css";
+*{
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal
+}
+header{
+    height: 75dvh;
+    background-color: var(--bg-300);
+}
+nav{
+    display: flex;
+    height: fit-content;
+    background-color: var(--bg-200);
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
 
+}
+.navli ul{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    gap: 3rem;
+}
+.navli li {
+    list-style: none;
+}
+.quicktools{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.quicktools img{
+    width: 35px;
+}
+
+.banner{
+    display: flex;
+    height: inherit;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+section .dishlist{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dishlist div{
+    width: 200px;
+    height: 20dvh;
+    background-color: var(--bg-100);
+    text-align: center;
+    display: grid;
+    align-items: end;
+    padding-bottom: .5rem;
+}
+section .wrapperbanner{
+    display: flex;
+    flex-direction: row;
+    height: 30rem;
+    background-color: var(--accent-100);
+    margin: 2rem 0;
+}
+
+.wrapperbanner :nth-child(1){
+    display: grid;
+    align-items: center;
+}
+
+.text1{
+    order: 1;
+}
+.imgbanner1{
+    order: 2;
+}
+.text2{
+    order: 2;
+}
+.imgbanner2{
+    order: 1;
+}

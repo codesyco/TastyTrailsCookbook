@@ -91,6 +91,15 @@ section .dishlist{
     align-items: end;
     padding-bottom: .5rem;
 }
+
+.dishlist img{
+    margin: auto;
+    max-width: 80%;
+    object-fit: cover;
+
+}
+
+
 .wrapperbanner{
     display: flex;
     flex-direction: row;
@@ -101,6 +110,10 @@ section .dishlist{
     position: relative;
     max-height: 360px;
     background-color: var(--primary-200);
+}
+.banner p{
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
 }
 .bannersec{
     position: relative;

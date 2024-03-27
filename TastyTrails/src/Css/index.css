@@ -65,7 +65,7 @@ nav{
     gap: 1rem;
 }
 .quicktools img{
-    width: 35px;
+    width: 20px;
 }
 
 .banner{
@@ -81,7 +81,12 @@ nav{
 
 section .dishlist{
     display: flex;
-    justify-content: space-between;
+    height: fit-content;
+    flex-wrap: wrap;
+    gap: 5%;
+    margin-top: 4%;
+    row-gap: 5%;
+    justify-content: center;
 }
 
 .dishlist div{
@@ -90,15 +95,32 @@ section .dishlist{
     background-color: var(--bg-100);
     text-align: center;
     display: grid;
+    margin-bottom: 2%;
+    border-radius: 20px;
+    position: relative;
     align-items: end;
     padding-bottom: .5rem;
+    overflow: hidden;
 }
+.dishlist p{
+    color: white;
+    position: absolute;
+    top: 70%;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 800;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 
 
 .dishlist img{
     margin: auto;
-    max-width: 80%;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
  .dishlist img{
@@ -128,8 +150,7 @@ section .dishlist{
     background-color: var(--primary-200);
 }
 .banner p{
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(4px);
+    /* backdrop-filter: blur(4px); */
 }
 .bannersec{
     position: relative;
@@ -187,6 +208,62 @@ section .dishlist{
     object-position: center;
     border-style: none;
 }
+<<<<<<< HEAD
 /* .textinner{
     align-items: center; 
 }  */
+=======
+.textinner{
+    /* align-items: center; */
+}
+.socials img{
+    width: 25px;
+}
+footer{
+    height: 50vh;
+    background-color: var(--text-200);
+    padding: 2rem;
+}
+footer a{
+    text-decoration: none;
+    color: black;
+}
+.footerinfo{
+    display: flex;
+    flex-wrap: wrap;
+    height: 90%;
+}
+.contact{
+    padding-left: 2rem;
+}
+.contact h3{
+    font-size: 15px;
+    font-weight: 500;
+}
+.infocompany{
+    width: 50%;
+}
+.infocompany img{
+    width: 80px;
+}
+.navigate{
+    width: 50%;
+}
+.copyright{
+    text-align: center;
+    font-size: 12px;
+}
+.socials{
+    display: flex;
+    justify-content: center;
+}
+.navigate{
+    padding-top: 2rem;
+    font-size: 15px;
+}
+.flogo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+>>>>>>> d881ab062ed301c9558db3482f3bf67cde846e62

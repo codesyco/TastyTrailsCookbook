@@ -49,9 +49,7 @@ nav{
         opacity: 1;
     }
 }
-.logo{
 
-}
 .navli ul{
     display: flex;
     position: relative;
@@ -96,13 +94,27 @@ section .dishlist{
     padding-bottom: .5rem;
 }
 
+
 .dishlist img{
     margin: auto;
     max-width: 80%;
     object-fit: cover;
-
 }
 
+ .dishlist img{
+    transform:
+    perspective(900px)
+    rotateX('60deg') 
+    scale(0.7);
+    transition: .5s ease all;
+    
+    &:hover{
+        transform: 
+        rotate(0deg)
+        translateY(10px)
+        scale(1);
+    }
+}
 
 .wrapperbanner{
     display: flex;
@@ -175,6 +187,6 @@ section .dishlist{
     object-position: center;
     border-style: none;
 }
-.textinner{
-    /* align-items: center; */
-}
+/* .textinner{
+    align-items: center; 
+}  */

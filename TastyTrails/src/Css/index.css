@@ -49,9 +49,7 @@ nav{
         opacity: 1;
     }
 }
-.logo{
 
-}
 .navli ul{
     display: flex;
     position: relative;
@@ -116,6 +114,7 @@ section .dishlist{
 }
 
 
+
 .dishlist img{
     margin: auto;
     max-width: 100%;
@@ -126,6 +125,20 @@ section .dishlist{
     border: none;
 }
 
+ .dishlist img{
+    transform:
+    perspective(900px)
+    rotateX('60deg') 
+    scale(0.7);
+    transition: .5s ease all;
+    
+    &:hover{
+        transform: 
+        rotate(0deg)
+        translateY(10px)
+        scale(1);
+    }
+}
 
 .wrapperbanner{
     display: flex;

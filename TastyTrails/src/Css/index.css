@@ -208,11 +208,6 @@ section .dishlist{
     object-position: center;
     border-style: none;
 }
-<<<<<<< HEAD
-/* .textinner{
-    align-items: center; 
-}  */
-=======
 .textinner{
     /* align-items: center; */
 }
@@ -266,4 +261,3 @@ footer a{
     flex-direction: row;
     align-items: center;
 }
->>>>>>> d881ab062ed301c9558db3482f3bf67cde846e62

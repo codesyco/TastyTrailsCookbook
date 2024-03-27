@@ -13,15 +13,34 @@ html{
     font-style: normal
 }
 header{
-    height: 75dvh;
-    background-color: var(--bg-300);
+    height: 100dvh;
+    background: url('../Assets/Downpic.cc-688602226.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 nav{
     display: flex;
     height: fit-content;
-    background-color: var(--bg-200);
+    background-color: var(--bg-300);
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    animation: fadenav linear forwards;
+    animation-duration: view();
+    transition: 2s ease-out;
+}
+@keyframes fadenav {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .5;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 .logo{
 
@@ -47,6 +66,7 @@ nav{
 .banner{
     display: flex;
     height: inherit;
+    /* background-color: #ffffff36; */
     flex-direction: column;
     position: relative;
     justify-content: center;
@@ -61,7 +81,7 @@ section .dishlist{
 
 .dishlist div{
     width: 200px;
-    height: 20dvh;
+    height: 10rem;
     background-color: var(--bg-100);
     text-align: center;
     display: grid;
@@ -75,6 +95,16 @@ section .wrapperbanner{
     background-color: var(--accent-100);
     margin: 2rem 0;
 }
+.wrapper{
+    color: white;
+}
+
+.wrapper p{
+    font-size: 25px;
+}
+.wrapper h1{
+    font-size: 55px;
+}
 
 .wrapperbanner :nth-child(1){
     display: grid;
@@ -86,6 +116,9 @@ section .wrapperbanner{
 }
 .imgbanner1{
     order: 2;
+}
+.imgbanner1 img{
+    width: 360px;
 }
 .text2{
     order: 2;

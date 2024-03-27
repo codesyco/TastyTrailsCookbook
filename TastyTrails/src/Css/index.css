@@ -19,13 +19,16 @@ header{
     background-size: cover;
     background-position: center;
 }
+.logo img{
+    width: 60px;
+}
 section{
     padding: 1rem;
 }
 nav{
     display: flex;
     height: fit-content;
-    background-color: var(--bg-300);
+    background-color: var(--text-200);
     justify-content: space-between;
     align-items: center;
     position: fixed;
@@ -33,6 +36,7 @@ nav{
     animation: fadenav linear forwards;
     animation-duration: view();
     transition: 2s ease-out;
+    z-index: 11;
 }
 @keyframes fadenav {
     0% {

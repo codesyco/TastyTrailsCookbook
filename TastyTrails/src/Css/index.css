@@ -7,6 +7,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+body a{
+    text-decoration: none;
+    color: var(--bg-200);
+}
 html{
     font-family: "Comfortaa", sans-serif;
     font-optical-sizing: auto;
@@ -18,6 +22,9 @@ header{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+body{
+    background-color: var(--text-200);
 }
 .logo img{
     width: 60px;
@@ -37,6 +44,7 @@ nav{
     animation-duration: view();
     transition: 2s ease-out;
     z-index: 11;
+    border-bottom: 1px solid #b6b1b1 ;
 }
 @keyframes fadenav {
     0% {
@@ -66,6 +74,11 @@ nav{
 }
 .quicktools img{
     width: 20px;
+}
+.intromessage h1{
+    text-align: center;
+    padding: 1rem;
+    color: var(--bg-200);
 }
 
 .banner{
@@ -163,9 +176,36 @@ section .dishlist{
 
 .wrapper p{
     font-size: 25px;
+    opacity: 0;
+    animation: banner1 linear forwards;
+    animation-duration: view();
+    transition: 2s ease-out;
 }
 .wrapper h1{
     font-size: 55px;
+    opacity: 0;
+    animation: banner2 linear forwards;
+    animation-duration: view();
+    transition: 2s ease-out;
+}
+
+@keyframes banner1 {
+    from{
+        transform: translateY(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes banner2 {
+    from{
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .text1{
@@ -220,6 +260,7 @@ footer{
     height: 50vh;
     background-color: var(--text-200);
     padding: 2rem;
+    border-top: 1px solid #b6b1b1 ;
 }
 footer a{
     text-decoration: none;

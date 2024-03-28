@@ -26,6 +26,23 @@ header{
 body{
     background-color: var(--text-200);
 }
+.hideselection {
+    display: none;
+}
+
+.showSelection {
+    display: block;
+}
+.topplace{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--bg-100);
+}
+
+.selectedclass {
+    display: none;
+}
+
 .logo img{
     width: 60px;
 }
@@ -37,6 +54,12 @@ body{
 .logo p{
     font-weight: bold;
     font-size: 15px;
+}
+.meal-item button{
+    border: none;
+    padding: 1.rem 1rem;
+    width: 200px;
+    cursor: pointer;
 }
 
 section{
@@ -71,9 +94,12 @@ nav{
 .navli ul{
     display: flex;
     position: relative;
-    gap: 3rem;
+    gap: 1rem;
     margin-left: -150px;
     /* align-items: center; */
+}
+.navli a{
+    font-size: 13px;
 }
 .navli li {
     list-style: none;
@@ -156,9 +182,9 @@ section .dishlist{
     color: white;
     position: absolute;
     top: 70%;
-    font-size: 18px;
+    font-size: xx-large;
     text-transform: capitalize;
-    font-weight: 800;
+    font-weight: bolder;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -172,6 +198,7 @@ section .dishlist{
     object-fit: cover;
     object-position: center;
     border: none;
+    filter: blur(1px);
 }
 .dishlist img::after{
     content: '';
@@ -190,9 +217,7 @@ section .dishlist{
     
     &:hover{
         transform: 
-        rotate(0deg)
-        translateY(10px)
-        scale(1);
+        scale(1.2);
     }
 }
 
@@ -385,8 +410,11 @@ section .dishlist{
 .socials img{
     width: 25px;
 }
+.mainpic, .sidepic{
+    scale: 1.3;
+}
 footer{
-    height: 30vh;
+    height: 40vh;
     background-color: var(--text-200);
     padding: 2rem;
     border-top: 1px solid #b6b1b1 ;
@@ -490,7 +518,7 @@ footer a{
 .title{
     text-align: left;
     font-size: 40px;
-    border-bottom: 1px solid var(--bg-100);
+
 }
 .meal-details{
     position: fixed;
@@ -636,7 +664,7 @@ footer a{
 @media screen and (min-width: 768px){
     #meal{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 2rem;
     }
     #meal2{
@@ -660,3 +688,17 @@ footer a{
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* vh - viewport height */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure loading screen is above all content */
+  }
+  

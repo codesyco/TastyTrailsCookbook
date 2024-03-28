@@ -94,9 +94,12 @@ nav{
 .navli ul{
     display: flex;
     position: relative;
-    gap: 3rem;
+    gap: 1rem;
     margin-left: -150px;
     /* align-items: center; */
+}
+.navli a{
+    font-size: 13px;
 }
 .navli li {
     list-style: none;

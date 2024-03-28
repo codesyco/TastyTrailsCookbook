@@ -134,8 +134,14 @@ section .dishlist{
     max-height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: blur(1px);
     border: none;
+}
+.dishlist img::after{
+    content: '';
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.199);
 }
 
  .dishlist img{
@@ -230,6 +236,11 @@ section .dishlist{
     object-fit: cover;
     object-position: center;
 }
+
+.rh{
+    text-align: center;
+}
+
 .text2{
     order: 2;
     width: 50%;

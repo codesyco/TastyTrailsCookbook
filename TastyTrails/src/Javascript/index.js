@@ -58,7 +58,7 @@ function getMealList(){
             });
             mealList.classList.remove('notFound');
         } else{
-            html = "Sorry, we didn't find any meal!";
+            html = "Sorry, no meals have been added!";
             mealList.classList.add('notFound');
         }
 
@@ -66,7 +66,7 @@ function getMealList(){
     });
 }
 
-function getMealByCategory(event) {
+function getMealByCategory() {
     let categoryEle = document.getElementById('category');
     let categoryVal = categoryEle.textContent;
     let mealList = document.getElementById('meal');
@@ -96,7 +96,7 @@ function getMealByCategory(event) {
             });
             mealList.classList.remove('notFound');
         } else{
-            html = "Sorry, we didn't find any meal!";
+            html = "Sorry, no meals have been added";
             mealList.classList.add('notFound');
         }
 
@@ -142,3 +142,83 @@ function mealRecipeModal(meal){
     mealDetailsContent.innerHTML = html;
     mealDetailsContent.parentElement.classList.add('showRecipe');
 }
+const loadingScreen = document.getElementById('loading-screen');
+
+// window.addEventListener('DOMContentLoaded', () => {
+//   setTimeout(() => {
+//     loadingScreen.parentNode.removeChild(loadingScreen);
+//   }, 3500); 
+// });
+
+const closerecipieofday = document.getElementById('topplace2')
+closerecipieofday.addEventListener('click', previousstate )
+function previousstate (){
+    selection.style.display = 'block';
+    selected.style.display = 'none';
+}
+
+let selection = document.getElementById('selecttype')
+let type = document.getElementById('type')
+// let mealItem = document.getElementsByClassName('meal-item')
+// let mealItem = document.getElementById('newmeal')
+// mealItem.addEventListener('click', () => findSelectedCategory);
+// selection.addEventListener('click', getMealRecipe);
+
+// Get all elements with the class "newmeal"
+let newMealButtons = document.querySelectorAll('.newmeal');
+
+// Loop through each new meal button
+newMealButtons.forEach(button => {
+    // Add click event listener to each button
+    button.addEventListener('click', function() {
+        // Find the corresponding type element within the same meal-item div
+        let typeElement = this.closest('.meal-item').querySelector('h3#type');
+        let selectedCatVal = typeElement.textContent;
+
+        // Hide selecttype section
+        let selection = document.getElementById('selecttype');
+        selection.style.display = 'none';
+
+        // Display selectedtype section
+        let selected = document.getElementById('selectedtype');
+        selected.style.display = 'block';
+
+        // Fetch data and populate selectedtype section
+        fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${selectedCatVal}`)
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return res.json();
+            })
+            .then(data => {
+                let mealList = document.getElementById('meal');
+                let html = "";
+
+                if (data.meals) {
+                    data.meals.forEach(meal => {
+                        html += `
+                        <div class="meal-item" data-id="${meal.idMeal}">
+                            <div class="meal-img">
+                                <img src="${meal.strMealThumb}" alt="food">
+                            </div>
+                            <div class="meal-name">
+                                <h3>${meal.strMeal}</h3>
+                                <a href="#" class="recipe-btn">Get Recipe</a>
+                            </div>
+                        </div>
+                        `;
+                    });
+                    mealList.innerHTML = html;
+                } else {
+                    mealList.innerHTML = "Sorry, no meals have been added.";
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching meal data:', error);
+                // Handle error here, e.g., display an error message to the user
+            });
+    });
+});
+
+

@@ -106,6 +106,28 @@ nav{
     align-items: center;
     text-align: center;
 }
+@media screen and (min-width:768px){
+    .banner{
+        flex-direction: row;
+        }
+    .banner_right{
+        display: flex;
+        flex-direction: column;
+        margin-left: 5vw;
+        max-width: calc(40% - 10vw);
+    }
+    .banner_left{
+        margin-right: 5vw;
+        max-width: calc(60% - 10vw);
+    }
+}
+/* .banner::before {
+    content: "";
+    position: absolute;
+    top: 0; left:  0; bottom: 0; right: 0;
+    z-index: 1;
+    background: url("../img/bannerBg.jpg") no-repeat center / cover;
+    } */
 
 section .dishlist{
     display: flex;
@@ -279,6 +301,87 @@ section .dishlist{
 .textinner{
     color: var(--text-200);
 }
+.fries{
+    color: white;
+}
+[data-tooltip]:hover{
+    cursor: pointer;
+    position: relative;
+}
+
+/* Fries Banner */
+[data-tooltip]:hover::before{
+    all: initial;
+    display: inline-block;
+    padding: 10px;
+    background-color: #1a1a1a;
+    content: attr(data-tooltip);
+    color: #f9f9f9;
+    position: absolute;
+    bottom: 20px;
+    width: 70px;
+    left: 20px;
+    transform: translate(-50%, 0);
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+[data-tooltip]:hover::after{
+    all: initial;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #1a1a1a;
+    position: absolute;
+    bottom: 100%;
+    content: '';
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-bottom: 5px;
+}
+
+/* Jollof Rice */
+.jrice{
+    color: white;
+    font-family: "Lato", sans-serif;
+}
+
+.jrice[data-tooltip]:hover::before{
+    all: initial;
+    display: inline-block;
+    padding: 10px;
+    background-color: #1a1a1a;
+    content: attr(data-tooltip);
+    color: #f9f9f9;
+    position: absolute;
+    bottom: 20px;
+    width: 100px;
+    left: 44px;
+    transform: translate(-50%, 0);
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.jrice[data-tooltip]:hover::after{
+    all: initial;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #1a1a1a;
+    position: absolute;
+    bottom: 100%;
+    content: '';
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-bottom: 5px;
+}
+
 .socials img{
     width: 25px;
 }
@@ -295,7 +398,7 @@ footer a{
 .footerinfo{
     display: flex;
     flex-wrap: wrap;
-    height: 90%;
+    height: 100%;
 }
 .contact{
     padding-left: 2rem;
@@ -312,14 +415,17 @@ footer a{
 }
 .navigate{
     width: 50%;
+    text-align: right;
 }
 .copyright{
     text-align: center;
     font-size: 12px;
+    width: 100%;
 }
 .socials{
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 .navigate{
     padding-top: 2rem;
